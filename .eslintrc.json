@@ -1,7 +1,9 @@
 {
   "extends": "next/core-web-vitals",
-  "plugins": ["unused-imports"],
+  "plugins": ["simple-import-sort", "unused-imports"],
   "rules": {
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
     "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [
@@ -13,5 +15,9 @@
             "argsIgnorePattern": "^_"
         }
     ]
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": "latest"
   }
 }
